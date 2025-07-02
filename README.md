@@ -45,8 +45,8 @@ The executable will be in ```target/release/minigrep.exe```.
 
 ## License
 
-This project is licensed under the Anti-Capitalist Software License (ACSL) v1.4.  
-Use is permitted for non-commercial, anti-capitalist, or cooperative purposes only.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.  
+You are free to use, modify, and share the software — but **not for commercial purposes**.
 
 See [LICENSE](./LICENSE) for full terms.
 
