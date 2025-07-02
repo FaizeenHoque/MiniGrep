@@ -42,3 +42,11 @@ cargo build --release
 ```
 
 The executable will be in ```target/release/minigrep.exe```.
+
+## License
+
+This project is licensed under the Anti-Capitalist Software License (ACSL) v1.4.  
+Use is permitted for non-commercial, anti-capitalist, or cooperative purposes only.
+
+See [LICENSE](./LICENSE) for full terms.
+
