@@ -1,5 +1,4 @@
 use std::fs;
-use std::env;
 use std::error::Error;
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
@@ -27,20 +26,19 @@ pub struct Config {
 impl Config {
     pub fn new(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
-            return Err("Not enought arguments!");
+            return Err("Not enough arguments!");
         }
 
-        let query: String = args[1].clone();
-        let filename: String = args[2].clone();
+        let query = args[1].clone();
+        let filename = args[2].clone();
 
-        let case_sensitive = match env::var("CASE_INSENSITIVE") {
-            Ok(val) => val != "1", // case_sensitive = false only if value is "1"
-            Err(_) => true,
-        };
+        // Look for an optional flag like --case-insensitive
+        let case_sensitive = !args.contains(&String::from("--case-insensitive"));
 
         Ok(Config { query, filename, case_sensitive })
     }
 }
+
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let mut results = Vec::new();
@@ -90,19 +88,18 @@ Duct tape";
 
 
 
-     #[test]
+    #[test]
     fn case_insensitive() {
         let query = "rUsT";
         let contents = "\
 Rust:
 safe, fast, productive.
-Pick three.";
-
+Trust me.";
 
         assert_eq!(
             vec!["Rust:", "Trust me."],
             search_case_insensitive(query, contents)
-        )
-    }
+        );
+}
 
 }
