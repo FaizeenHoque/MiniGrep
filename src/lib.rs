@@ -25,15 +25,22 @@ pub struct Config {
 
 impl Config {
     pub fn new(args: &[String]) -> Result<Config, &str> {
+        if args.len() == 1 || args.contains(&"--help".to_string()) {
+            return Err("Usage: minigrep <query> <filename> [--case-insensitive]\n\
+                \n\
+                Searches for <query> in <filename>.\n\
+                Use --case-insensitive flag for case-insensitive search.");
+        }
+
         if args.len() < 3 {
-            return Err("Not enough arguments!");
+            return Err("Not enough arguments!\n\
+                Usage: minigrep <query> <filename> [--case-insensitive]");
         }
 
         let query = args[1].clone();
         let filename = args[2].clone();
 
-        // Look for an optional flag like --case-insensitive
-        let case_sensitive = !args.contains(&String::from("--case-insensitive"));
+        let case_sensitive = !args.contains(&"--case-insensitive".to_string());
 
         Ok(Config { query, filename, case_sensitive })
     }
