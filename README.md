@@ -21,7 +21,7 @@ Or run manually:
 ```sh
 powershell -Command "Invoke-WebRequest -Uri 'https://fxnbins.faizeenhoque.xyz/minigrep/v1.0.0/minigrep.exe' -OutFile '$env:USERPROFILE\fxnbin\minigrep.exe'"
 ```
-Make sure to add C:\Users\YourName\fxnbin to your system PATH if it's not already.
+Make sure to add C:\Users\YourName\fxnbins to your system PATH if it's not already.
 
 ## Usage
 ```sh
