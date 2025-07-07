@@ -11,18 +11,6 @@ A simple, fast, and lightweight CLI tool for searching text in files — written
 
 ## Installation (Windows)
 
-You can install `minigrep` with the provided installer script:
-
-```sh
-curl -O https://fxnbins.faizeenhoque.xyz/minigrep/install_minigrep.bat
-install_minigrep.bat
-```
-Or run manually:
-```sh
-powershell -Command "Invoke-WebRequest -Uri 'https://fxnbins.faizeenhoque.xyz/minigrep/v1.0.0/minigrep.exe' -OutFile '$env:USERPROFILE\fxnbin\minigrep.exe'"
-```
-Make sure to add C:\Users\YourName\fxnbins to your system PATH if it's not already.
-
 ## Usage
 ```sh
 minigrep <query> <filename> [--case-insensitive]
